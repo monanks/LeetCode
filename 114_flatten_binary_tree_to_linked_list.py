@@ -14,24 +14,14 @@ class Solution(object):
         if root == None:
             return
         else:
-            if root.right == None and root.left == None:
-                return
-            elif root.right != None and root.left == None:
+            if root.right:
                 self.flatten(root.right)
-                return
-            elif root.right == None and root.left != None:
+            if root.left:
                 self.flatten(root.left)
+                if root.right:
+                    node = root.left
+                    while node.right:
+                        node = node.right
+                    node.right = root.right
                 root.right = root.left
                 root.left = None
-                return
-            else:
-                self.flatten(root.left)
-                self.flatten(root.right)
-                node = root.left
-                while node.right:
-                    node = node.right
-                node.right = root.right
-                root.right = root.left
-                root.left = None
-                return
-        
