@@ -13,5 +13,5 @@ class Solution(object):
                 low = prices[i]
         return profit
 
-s = Solution()
-print(s.maxProfit([7, 6, 4, 3, 1]))
+# s = Solution()
+# print(s.maxProfit([7, 6, 4, 3, 1]))
